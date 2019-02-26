@@ -1,14 +1,30 @@
 <html lang="en">
 <head>
 </head>
-
+<style>
+.container
+{       display: block;
+    background: #dfe5ea;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 5%;
+    line-height: inherit;
+    box-sizing: border-box;
+    margin-right: 15%;
+    margin-left:15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+</style>
 <body>
 <form action='' method='post' >
  {% csrf_token %}
-<div>
-    {{ form}}
-</div>
+<div class="container">
+    {{ form.as_p}}
     <button type="submit">Submit</button>
+</div>
+
 </form>
 </body>
 </html>
