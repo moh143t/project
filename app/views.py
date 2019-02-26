@@ -1,22 +1,27 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import SignupForm,LoginForm
+from .forms import signUpForm, LoginForm
 
-def signUp(request):
+
+
+def signUpFormDetail(request):
     if request.method == 'POST':
-        form_response=SignupForm(request.POST)
+        form_response=signUpForm(request.POST)
         if form_response.is_valid():
-            name=form_response.cleaned_data.get("name")
-            email = form_response.cleaned_data.get ("email")
-            password = form_response.cleaned_data.get ('password')
-            print(name,email,password)
-        else:
-            print("Invalid Response")
-    else:
-        print("Not a Post Request")
+            form_response.save()
 
-    form_response = SignupForm
-    return render(request,'Signup.html',{'form':SignupForm})
+
+    form_response = signUpForm()
+    return render(request,'Signup.html',{'form':signUpForm})
+
+
+
+
+
+
+
+
+
 
 def logIn(request):
     if request.method == 'POST':
