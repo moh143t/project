@@ -86,3 +86,15 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.button_o {
+  display: inline-block;
+  vertical-align:middle;
+  background-color: #550082;
+  border: none;
+  color: #000040;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+border-radius: 121px;
+}
